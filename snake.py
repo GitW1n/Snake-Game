@@ -4,6 +4,8 @@ import pygame
 import random
 import tkinter as tk
 from tkinter import messagebox
+from typing import Tuple, List, Dict
+
 
 width = 500
 height = 500
