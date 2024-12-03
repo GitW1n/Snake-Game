@@ -79,6 +79,7 @@ class snake():
                     self.dirny = 1
                     self.dirnx = 0
                     self.turns[self.head.pos[:]] = [self.dirnx,self.dirny]
+                
                 if self.head.pos[0] < 0 or self.head.pos[0] >= rows or self.head.pos[1] < 0 or self.head.pos[1] >= rows:
             self.reset((10, 10))
             
