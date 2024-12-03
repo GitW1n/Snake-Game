@@ -103,7 +103,10 @@ class snake():
         tail = self.body[-1]
         dx, dy = tail.dirnx, tail.dirny
         pos = (tail.pos[0] - dx, tail.pos[1] - dy)
-        
+        new_cube = Cube(pos)
+        new_cube.dirnx = dx
+        new_cube.dirny = dy
+        self.body.append(new_cube)
 
     
     def draw(self, surface):
