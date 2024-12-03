@@ -19,7 +19,7 @@ class cube():
     def __init__(self, start, dirnx=1, dirny=0, color=(255,0,0)):
         self.pos = start
         self.dirnx = dirnx
-        self.dirny = dirny # "L", "R", "U", "D"
+        self.dirny = dirny
         self.color = color
 
     def move(self, dirnx, dirny):
@@ -102,18 +102,9 @@ class snake():
     def addCube(self):
         tail = self.body[-1]
         dx, dy = tail.dirnx, tail.dirny
+        pos = (tail.pos[0] - dx, tail.pos[1] - dy)
+        
 
-        if dx == 1 and dy == 0:
-            self.body.append(cube((tail.pos[0]-1,tail.pos[1])))
-        elif dx == -1 and dy == 0:
-            self.body.append(cube((tail.pos[0]+1,tail.pos[1])))
-        elif dx == 0 and dy == 1:
-            self.body.append(cube((tail.pos[0],tail.pos[1]-1)))
-        elif dx == 0 and dy == -1:
-            self.body.append(cube((tail.pos[0],tail.pos[1]+1)))
-
-        self.body[-1].dirnx = dx
-        self.body[-1].dirny = dy
     
     def draw(self, surface):
         for i,c in enumerate(self.body):
