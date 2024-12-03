@@ -193,7 +193,6 @@ def main():
                 break
                     
         redrawWindow()
-
 main()
     
 
